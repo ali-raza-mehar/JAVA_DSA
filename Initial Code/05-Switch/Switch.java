@@ -1,6 +1,9 @@
+
+// package Switch.Notes;
 import java.util.Scanner;
-import java.math.BigInteger;
+
 public class Switch {
+
     public static void main(String[] args) {
         int a, b;
         long factorialA = 1;
@@ -14,7 +17,7 @@ public class Switch {
         System.out.print("Enter the operator that you want to apply: ");
         String op2 = in.next();
         op = op2.charAt(0);
-        switch (op){
+        switch (op) {
             case '+' -> {
                 int addition = a + b;
                 System.out.print("Addition = " + addition);
@@ -39,25 +42,25 @@ public class Switch {
                 System.out.print("Enter the order to calculate power either a^b or b^a: ");
                 String order = in.next();
                 order = order.trim();
-                switch (order){
+                switch (order) {
                     case "a^b" -> {
-                        double power = Math.pow(a,b);
-                        System.out.print(a + "^" + b + " = " + power );
+                        double power = Math.pow(a, b);
+                        System.out.print(a + "^" + b + " = " + power);
                     }
                     case "b^a" -> {
-                        double power2 = Math.pow(b,a);
-                        System.out.print(b + "^" + a + " = " + power2 );
+                        double power2 = Math.pow(b, a);
+                        System.out.print(b + "^" + a + " = " + power2);
                     }
                     default -> System.out.print("Invalid order!!");
                 }
             }
-            case '!' ->{
+            case '!' -> {
                 System.out.println("Enter the choice:");
                 System.out.println("1.)Factorial for 1st number");
                 System.out.println("2.)Factorial for 2nd number");
 
                 int choice = in.nextInt();
-                switch (choice){
+                switch (choice) {
                     case 1 -> {
                         for (int i = 1; i <= a; i++) {
                             factorialA = factorialA * i;
@@ -75,5 +78,6 @@ public class Switch {
             }
             default -> System.out.print("Invalid operator!!");
         }
+        in.close();
     }
 }
