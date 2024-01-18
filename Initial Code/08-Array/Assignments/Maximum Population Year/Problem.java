@@ -2,8 +2,8 @@
 public class Problem {
     public static void main(String[] args) {
         int[][] logs = {
-                { 1993, 1999 },
-                { 2000, 2010 }
+                { 1950, 1955 },
+                { 1956, 1960 },
         };
         System.out.println(maximumPopulation(logs));
     }
