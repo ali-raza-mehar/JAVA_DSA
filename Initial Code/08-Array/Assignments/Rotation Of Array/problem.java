@@ -7,7 +7,7 @@ public class problem {
         int k = 2;
         rotate(array, k);
     }
-
+// this for rotation of array
     static void rotate(int[] nums, int k) {
         int temp = 0;
         for (int i = 1; i <= k; i++) {
