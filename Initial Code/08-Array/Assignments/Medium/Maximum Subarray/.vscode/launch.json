@@ -9,6 +9,13 @@
       "name": "Maximum_SubArray",
       "request": "launch",
       "mainClass": "Maximum_SubArray",
+      "projectName": "Maximum Subarray_68bf23a"
+    },
+    {
+      "type": "java",
+      "name": "Maximum_SubArray",
+      "request": "launch",
+      "mainClass": "Maximum_SubArray",
       "projectName": "Maximum Subarray_801e11ee"
     },
     {
