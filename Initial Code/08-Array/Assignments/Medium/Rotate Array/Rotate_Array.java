@@ -8,7 +8,7 @@ public class Rotate_Array {
         for (int i = 0; i < k; i++) {
             int temp = nums[lastIndex];
             for (int j = nums.length - 2; j >= 0; j--) {
-                nums[i + 1] = nums[i];
+                nums[j + 1] = nums[j];
             }
             nums[0] = temp;
         }
