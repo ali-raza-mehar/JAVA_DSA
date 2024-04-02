@@ -4,6 +4,8 @@ public class Rotate_Array {
 
     static void rotate(int[] nums, int k) {
         int n = nums.length;
+        // k can be greater than the length
+        k = k % n;
         /* firstly reverse the entire array */
         int left = 0, right = n - 1;
         // int mid = n / 2;
