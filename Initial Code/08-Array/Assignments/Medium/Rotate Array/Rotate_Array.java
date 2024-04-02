@@ -35,12 +35,11 @@ public class Rotate_Array {
             nums[right] = temp;
             right--;
         }
-
     }
 
     public static void main(String[] args) {
-        int[] array = { 1, 2, 3, 4, 5, 6, 7 };
-        // int[] array = { 1, 2 };
+        // int[] array = { 1, 2, 3, 4, 5, 6, 7 };
+        int[] array = { 1, 2 };
         // int[] array = { -1, -100, 3, 99 };
         rotate(array, 3);
         System.out.println(Arrays.toString(array));
