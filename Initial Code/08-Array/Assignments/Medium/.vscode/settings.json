@@ -1,3 +1,16 @@
 {
-  "java.debug.settings.onBuildFailureProceed": true
+  "java.debug.settings.onBuildFailureProceed": true,
+  "java.project.sourcePaths": [
+    "Spiral Matrix 2",
+    "Spiral Matrix",
+    "Sort Color",
+    "Set Matrix Zeros",
+    "Rotate Array",
+    "Product Except Itself",
+    "Maximum Subarray",
+    "Jump game",
+    "First And Last Position",
+    "Divide Integer",
+    "houseRobber"
+  ]
 }
