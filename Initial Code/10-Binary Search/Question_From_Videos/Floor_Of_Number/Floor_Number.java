@@ -20,7 +20,13 @@ public class Floor_Number {
         }
         if (ep > 0) {
             return nums[ep];
-        } else
+        }
+        /*
+         * if ep is positive it means ceiling of target number exists.
+         * if ep is negative and the negative index does not exist so it means floor
+         * does not exist.
+         */
+        else
             return -1;
     }
 

@@ -19,7 +19,9 @@ public class Ceiling_Number {
         }
         if (sp < nums.length) {
             return nums[sp];
-        } else
+        }
+        /* if sp greater than length it means ceiling of target number does not exist */
+        else
             return -1;
     }
 
