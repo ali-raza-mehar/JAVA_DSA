@@ -5,8 +5,9 @@ public class First_Position {
         int sp = 0;
         int ep = 1;
         while (target > array[ep]) {
+            int temp = ep + 1;
             ep = ep + ((ep - sp + 1) * 2);
-            sp = ep + 1;
+            sp = temp;
         }
         int ans = binarySearch(array, target, sp, ep);
         return ans;
@@ -35,8 +36,8 @@ public class First_Position {
     }
 
     public static void main(String[] args) {
-        int[] nums = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 16, 17, 18, 20, 21, 22, 34, 25, 60, 65, 68, 70, 76, 78, 80, 88 };
+        int[] nums = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 16, 17, 18, 20, 21, 22, 34, 25, 60, 65, 68, 70, 76, 78, 80, 88,
+                90, 91, 100, 110 };
         System.out.println(search(nums, 60));
-        System.out.println("Ali");
     }
 }
