@@ -4,11 +4,18 @@ public class First_Position {
     static int search(int[] array, int target) {
         int sp = 0;
         int ep = 1;
+        // if ep greater than target means element does not exist within the range of sp
+        // and ep
+        //
+        // i.e --> [2, 3] target = 6
+        // as you see that 6 > 3
         while (target > array[ep]) {
             int temp = ep + 1;
             ep = ep + ((ep - sp + 1) * 2);
             sp = temp;
         }
+        // if target less than ep check within the range of sp and ep by using simple
+        // binary search approach
         int ans = binarySearch(array, target, sp, ep);
         return ans;
     }

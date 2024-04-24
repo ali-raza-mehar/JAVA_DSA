@@ -2,6 +2,7 @@ package Question_From_Videos.Ceiling_Of_Number;
 
 public class Ceiling_Number {
     static int ceilingNumber(int[] nums, int target) {
+        // ceiling --> smallest element greater than or eqaul to target
         if (nums.length == 0) {
             return 0;
         }

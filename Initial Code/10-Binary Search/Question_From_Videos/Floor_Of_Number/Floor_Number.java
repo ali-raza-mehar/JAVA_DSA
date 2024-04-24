@@ -3,6 +3,8 @@ package Question_From_Videos.Floor_Of_Number;
 
 public class Floor_Number {
     static int floorNumber(int[] nums, int target) {
+        // floor --> largest element less than or eqaul to target
+
         if (nums.length == 0) {
             return 0;
         }
