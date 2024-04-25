@@ -12,11 +12,17 @@ public class Rotated_Array {
         if (nums[pivot] == target) {
             return nums[pivot];
         }
-
+        // if target > nums[0] is mean it will greater than the elements
+        // exist after the pivot element
+        // because after pivot element only exist element that smaller than pivot or
+        // starting element
+        // so there is no need to check after pivot
         if (target >= nums[0]) {
             return binarySearch(nums, target, 0, pivot - 1);
         }
-
+        // if not greater then it will be smaller
+        // if smaller than first element it means it exists after pivot
+        // becuse after pivot there are smaller elements than the first element
         return binarySearch(nums, target, pivot + 1, nums.length - 1);
 
     }
@@ -25,19 +31,39 @@ public class Rotated_Array {
     static int pivotElement(int[] nums) {
         int sp = 0;
         int ep = nums.length - 1;
-        while (sp <= ep /* beacuse in the end sp and ep will point toward the max elemnt */) {
+        while (sp <= ep) {
             int mid = sp + (ep - sp) / 2;
             // elements after pivot will always less than the first element of array
+            // if mid > mid + 1
+            // it means that is the pivot element
+            // because on the right side there are smaller
+            // mid + 1 --> in smaller element part
             if (mid < ep && nums[mid] > nums[mid + 1]) {
                 return mid;
             }
+            // if mid - 1 > mid reutrn mid - 1 as a ans
+            // mid - 1 --> greater part of array
             if (mid > sp && nums[mid - 1] > nums[mid]) {
                 return mid - 1;
             }
-
+            // if sp > mid
+            // it is mean that all the element after mid and inlcude mid
+            // will be always smaller than first so
+            // goal is to find larger element
+            // larger elements exist on the right side
             if (nums[sp] >= nums[mid]) {
                 ep = mid - 1;
-            } else {
+            }
+            // [4,5,6,7]
+            // start = 0;
+            // end = 3;
+            // mid = 1;
+            // as nums[sp] >= nums[mid];
+            // 4 >= 5 false
+            // there is clear scenarion if nums[sp] >= nums[mid] == false
+            // then my element exists on right side mean after mid
+            // so we will increase start by mid + 1;
+            else {
                 sp = mid + 1;
             }
         }
