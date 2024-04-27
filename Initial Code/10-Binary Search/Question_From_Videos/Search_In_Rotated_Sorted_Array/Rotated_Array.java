@@ -95,7 +95,7 @@ public class Rotated_Array {
     }
 
     public static void main(String[] args) {
-        // that are examples code
+        // that are examples code.)
         // int[] Array = { 5, 1 };
         // int[] Array = { 11, 13, 15, 17 };
         // int[] Array = { 3, 3, 3, 3, 1 };
