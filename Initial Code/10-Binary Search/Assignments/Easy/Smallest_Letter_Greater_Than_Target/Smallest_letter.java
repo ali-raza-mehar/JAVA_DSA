@@ -1,4 +1,4 @@
-package Assignments.Smallest_Letter_Greater_Than_Target;
+package Assignments.Easy.Smallest_Letter_Greater_Than_Target;
 
 public class Smallest_letter {
     static char nextGreatestLetter(char[] letters, char target) {

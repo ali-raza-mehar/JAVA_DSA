@@ -46,10 +46,11 @@ public class Minmum_Search_Rotated {
 
             if (nums[mid] < nums[mid + 1]) {
                 ep = mid;
+            } else {
+                sp = mid + 1;
             }
 
         }
-        // if target not find in the array then return -1;
         return nums[sp];
     }
 

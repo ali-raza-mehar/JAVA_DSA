@@ -1,4 +1,4 @@
-package Assignments.Valid_Perfect_Square;
+package Assignments.Easy.Valid_Perfect_Square;
 
 public class Perfect_Square {
     static int perfectSquare(int x) {

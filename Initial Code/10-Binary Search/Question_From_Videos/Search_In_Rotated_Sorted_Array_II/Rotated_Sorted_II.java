@@ -1,29 +1,20 @@
 package Question_From_Videos.Search_In_Rotated_Sorted_Array_II;
 
 public class Rotated_Sorted_II {
-    public boolean search(int[] nums, int target) {
+    static int findMin(int[] nums) {
         int pivot = pivotElement(nums);
 
         // if pivot not found just do normal search
-        if (pivot == -1) {
-            return binarySearch(nums, target, 0, nums.length - 1);
+        int min1, min2;
+        min1 = binarySearch(nums, 0, pivot);
+        if (pivot + 1 > nums.length - 1) {
+            return min1;
         }
-        // if not == -1 it means there are two ascending arrays
-        if (nums[pivot] == target) {
-            return true;
+        min2 = binarySearch(nums, pivot + 1, nums.length - 1);
+        if (min1 < min2) {
+            return min1;
         }
-        // if target > nums[0] is mean it will greater than the elements
-        // exist after the pivot element
-        // because after pivot element only exist element that smaller than pivot or
-        // starting element
-        // so there is no need to check after pivot
-        if (target >= nums[0]) {
-            return binarySearch(nums, target, 0, pivot - 1);
-        }
-        // if not greater then it will be smaller
-        // if smaller than first element it means it exists after pivot
-        // becuse after pivot there are smaller elements than the first element
-        return binarySearch(nums, target, pivot + 1, nums.length - 1);
+        return min2;
     }
 
     // find the pivot element
@@ -47,34 +38,58 @@ public class Rotated_Sorted_II {
             }
 
             // if elements at mid,start and end are equal skip these duplicates
-            if (nums[mid] == sp && nums[mid] == nums[ep]) {
+            if (nums[mid] == nums[sp] && nums[mid] == nums[ep]) {
                 // skip these duplicates
+                // Note: before skip might be possible that start and end can be pivot
+                if (sp < ep && nums[sp] > nums[sp + 1]) {
+                    return sp;
+                }
+                // if not simple increment
+                sp++;
+                // also check ep
+                if (ep > sp && nums[ep] < nums[ep - 1]) {
+                    return ep - 1;
+                }
+                ep--;
+            }
+            // life side is sorted so pivot should be in right
+            // example for this condition is above ---> nums[mid] == nums[sp] && nums[mid] >
+            // nums[ep]
+            // {3,3,3,3,3,7,1,1,1} --> nums[mid] == nums[s] && nums[mid] > nums[e]
+            // {3,4,5,6,7,8,3,3,3} --> nums[sp] < nums[mid]
+            else if (nums[sp] < nums[mid] || nums[mid] == nums[sp] && nums[mid] > nums[ep]) {
+                sp = mid + 1;
+            } else {
+                ep = mid - 1;
             }
         }
         return -1;
     }
 
     // search in first half before pivot
-    static boolean binarySearch(int[] nums, int target, int sp, int ep) {
+    static int binarySearch(int[] nums, int sp, int ep) {
 
-        while (sp <= ep) {
+        while (sp < ep) {
             /*
              * might be possible that (sp + ep) this thing can exceed the range of int in
              * java so --> sp + (ep - sp) / 2; is better to use in place of (sp + ep) / 2;
              */
             int mid = sp + (ep - sp) / 2;
 
-            if (target > nums[mid]) {
-                sp = mid + 1;
-            } else if (target < nums[mid]) {
-                ep = mid - 1;
-            } // if target not greater or less than mid than it can be only equal to target
-            else {
-                return true;
+            if (nums[mid] <= nums[mid + 1]) {
+                ep = mid;
             }
-
         }
-        // if target not find in the array then return -1;
-        return false;
+        return nums[sp];
+    }
+
+    public static void main(String[] args) {
+        // int[] nums = { 1, 1, 2, 1, 1, 13, 1, 1, 1, 1 };
+        // int[] nums = { 1, 1, 2, 13, 1, 1, 1, 1, 2, 2 };
+        // int[] nums = { 3, 1, 3, };
+        // int[] nums = { 1, 3, 5 };
+        int[] nums = { 1 };
+        // int[] nums = { 3, 3, 3, 3, 3, 3, 3, 3, 1, 3 };
+        System.out.println(findMin(nums));
     }
 }

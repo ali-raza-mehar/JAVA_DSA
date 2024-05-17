@@ -1,4 +1,4 @@
-package Assignments.Square_Root;
+package Assignments.Easy.Square_Root;
 
 public class SquareRoot {
 
