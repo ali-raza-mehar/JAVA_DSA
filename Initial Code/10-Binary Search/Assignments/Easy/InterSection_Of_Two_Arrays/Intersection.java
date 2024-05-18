@@ -1,13 +1,9 @@
+package Assignments.Easy.InterSection_Of_Two_Arrays;
 
 import java.util.Arrays;
 import java.util.HashSet;
 
 public class Intersection {
-    /**
-     * @param nums1
-     * @param nums2
-     * @return
-     */
     static int[] intersection(int[] nums1, int[] nums2) {
         HashSet<Integer> set = new HashSet<>();
         if (nums1.length > nums2.length) {
