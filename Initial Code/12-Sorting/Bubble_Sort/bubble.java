@@ -11,9 +11,9 @@ public class bubble {
         // check swaped for ith pass
         // if there is no swap in any ith swap
         // then break the loop
-        for (int i = 1; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             swaped = false;
-            for (int j = 1; j <= n - i; j++) {
+            for (int j = 1; j < n - i; j++) {
                 if (nums[j - 1] > nums[j]) {
                     swap(nums, j - 1, j);
                     swaped = true;
