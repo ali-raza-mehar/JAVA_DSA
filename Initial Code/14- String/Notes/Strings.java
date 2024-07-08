@@ -8,5 +8,6 @@ public class Strings {
         a = "High";
         System.out.println(a);
         System.out.println(b);
+        System.out.println(a.toLowerCase());
     }
 }
