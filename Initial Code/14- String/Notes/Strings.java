@@ -9,5 +9,7 @@ public class Strings {
         System.out.println(a);
         System.out.println(b);
         System.out.println(a.toLowerCase());
+        System.out.println(a.indexOf('a'));
+        System.out.println(a.contains(b));
     }
 }

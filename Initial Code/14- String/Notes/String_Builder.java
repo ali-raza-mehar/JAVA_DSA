@@ -59,10 +59,21 @@ public class String_Builder {
 
     static String freqAlphabets(String s) {
         System.out.println(s.length());
+        System.out.println("Index" + " || " + "Character");
+        System.out.print("-----------------");
+        System.out.println();
+        for (int i = 0; i < s.length(); i++) {
+            System.out.print("|");
+            System.out.print(i + "     ||     " + s.charAt(i));
+            System.out.println();
+
+            System.out.print("-----------------");
+            System.out.println();
+        }
         StringBuilder ans = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             if (i + 1 < s.length() && i + 2 < s.length()) {
-                if ((Character.isDigit(s.charAt(i))) && (Character.isDigit(i + 1) || (s.charAt(i + 1) == '0'))
+                if ((Character.isDigit(s.charAt(i))) && (Character.isDigit(s.charAt(i + 1)))
                         && (s.charAt(i + 2) == '#')) {
                     StringBuilder builder = new StringBuilder();
                     builder.append(s.charAt(i) + "" + s.charAt(i + 1));
@@ -72,12 +83,13 @@ public class String_Builder {
                     i += 2;
                 } else {
                     int value = Character.getNumericValue(s.charAt(i));
-                    // System.out.println(value);
                     ans.append((char) ('a' + (value - 1)));
                 }
+            } else {
+                int value = Character.getNumericValue(s.charAt(i));
+                ans.append((char) ('a' + (value - 1)));
             }
         }
-
         return ans.toString();
     }
 }
