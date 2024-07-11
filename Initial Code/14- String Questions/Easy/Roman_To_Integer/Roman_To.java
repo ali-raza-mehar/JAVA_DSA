@@ -124,5 +124,10 @@ public class Roman_To {
         // System.out.println(romanToInt("CMXCIX"));
         // System.out.println(romanToInt("MMXIV"));
         System.out.println(romanToInt("MMMXLV"));
+        String a = "abcdefd";
+        System.out.println(a.indexOf('d'));
+        StringBuilder sb = new StringBuilder(a);
+        sb.insert(0, 'z');
+        System.out.println(sb.toString());
     }
 }
