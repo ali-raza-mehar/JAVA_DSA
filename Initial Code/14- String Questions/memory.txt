@@ -1,0 +1,4 @@
+
+if we will object by keyword new then it will create in heap no matter where is creates
+
+but if we will create object without new keyword then it will create according to the characteristics of class
