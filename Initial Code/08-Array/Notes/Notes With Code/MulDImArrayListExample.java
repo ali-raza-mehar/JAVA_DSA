@@ -19,5 +19,4 @@ public class MulDImArrayListExample {
         }
         in.close();
     }
-
 }
