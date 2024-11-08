@@ -1,8 +1,8 @@
 package Notes.Notes_Code.Quick_Sort_05;
 
 import java.util.Arrays;
-// i will looking for greater element than pivot
-// j will looking for smaller element than pivot
+// i will looking for greater element than or equal to the  pivot
+// j will looking for smaller element than or equal to the  pivot
 
 //s stops at elements greater than or equal to the pivot.
 // e stops at elements less than or equal to the pivot.
@@ -27,6 +27,7 @@ public class QuickSort {
 
         // when I become greater than the pivot than
         // partitiong is done
+        // traverse the whole part
         while (i <= j) {
 
             // also a reason why if its already sorted it will not swap
