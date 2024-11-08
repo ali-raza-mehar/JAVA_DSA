@@ -1,16 +1,12 @@
-package Notes.Notes_Code;
+package Notes.Notes_Code.Recursion_Basics_01;
 
 public class Table {
     static void table(int n, int i) {
         if (i <= 10) {
             System.out.println(n + " * " + i + " = " + n * i);
-        } else {
-            System.out.println("***************");
-            return;
+            table(n, ++i);
+            System.out.println(n + " * " + i + " = " + n * i);
         }
-
-        table(n, i + 1);
-        System.out.println(i);
     }
 
     public static void main(String[] args) {

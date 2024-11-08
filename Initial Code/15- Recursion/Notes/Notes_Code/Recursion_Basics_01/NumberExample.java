@@ -1,5 +1,5 @@
 
-package Notes.Notes_Code;
+package Notes.Notes_Code.Recursion_Basics_01;
 
 public class NumberExample {
     public static void main(String[] args) {
