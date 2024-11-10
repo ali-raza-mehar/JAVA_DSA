@@ -15,6 +15,8 @@ public class SkipA {
         }
     }
 
+    // there is another method available
+
     public static void main(String[] args) {
         String s = "baccad";
         System.out.println(remove(s, 0));
