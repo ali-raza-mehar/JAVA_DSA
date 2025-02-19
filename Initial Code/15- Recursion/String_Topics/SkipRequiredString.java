@@ -1,6 +1,6 @@
-package String_Question;
+package String_Topics;
 
-public class SkipString {
+public class SkipRequiredString {
     static String skipString(String s) {
         if (s.isEmpty()) {
             return "";
@@ -9,6 +9,8 @@ public class SkipString {
         // skip those five characters
         if (s.startsWith("apple")) {
             return skipString(s.substring(5));
+        } else if (s.startsWith("app")) {
+            return skipString(s.substring(3));
         }
         return s.charAt(0) + skipString(s.substring(1));
     }

@@ -1,0 +1,168 @@
+
+********************RETURN TYPE BAARY MAI JB KUXH RETURN KIYA GYA HO*******************
+1.) Pahly return type ko dekhty hain
+
+static int func(int n){
+    if(n == 0)
+     return 0;
+    System.out.println(n);
+    return func(n - 1); 
+}
+
+main(){
+    func(5)
+}
+
+*********STACK MEMORY***********
+
+|  func(5) |
+|  func(4) |
+|  func(3) |
+|  func(2) |
+|  func(1) |
+|  func(0) |
+
+Note: jb func(0) execute ho ga ab n == 0 condition true ab is mai stament chly gi return 0; base case wali
+ab jaisy hi ye statment chly gi func(0) ka [activation record] khatam ho jaye ga base case wali return statement k chlny pr
+
+|  func(5) |
+|  func(4) |
+|  func(3) |
+|  func(2) |
+|  func(1) |
+
+ab ye base case mai return 0 jb chly gi aik tou activation record khatam ho gya aur dusra kaam ye ho ga ju ye return 0 yaani 0 value return kr rha hai ye us line pr jaye gi jahan function call hua tha.
+line number 40 pr function call hua tha tu wo value whaan jaye gi
+
+  if(n == 0)
+     return 0;
+    System.out.println(n);
+    return 0; 
+
+ab ye return 0 function wali ye vali value func(1) ko recieve ho gi is tarah ye chly gi
+
+
+func(5) --> func(4) --> func(3) --> func(2) --> func(1) --> func(0) --> 0
+
+
+Summary:
+
+1. pahly base case wali return stament chlny pr activation record khatam ho ga 
+2. phir jou value return ki gaye us line pr jaye gi jahan function call hua tha
+
+
+
+
+********************RETURN TYPE BAARY MAI JB KUXH NAHI RETURN KIYA GYA HO*******************
+
+2. 
+
+static void func(int n){
+    if(n == 0)
+     return;
+    System.out.println(n);
+    func(n - 1);
+}
+
+main(){
+    func(5)
+}
+
+
+
+1.) No value is returned, and the function's activation record is popped.
+2.) Control goes back to the calling function without sending any value.
+
+
+Scenario 1: Return with a Value (e.g., return 5;)
+Jab function ke return statement ke saath value hoti hai (e.g., return 5;), toh process kuch is tarah se hota hai:
+
+Function Call: Function ko call kiya gaya, aur ek activation record stack mein push hota hai.
+Base Case or Any Return Statement: Jab return 5; hota hai:
+Value (5) return hoti hai aur function ka activation record stack se pop hota hai.
+Control wapas jata hai us line par jahan pe function ko call kiya gaya tha.
+Return value (5) woh function receive karega jahan pe function call kiya gaya tha.
+
+
+Example Code: 
+
+
+static int func(int n) {
+    if (n == 0)
+        return 5;  // Base case with return value
+    return func(n - 1);
+}
+
+public static void main(String[] args) {
+    int result = func(3);
+    System.out.println(result);  // Prints 5
+}
+
+
+Execution Flow:
+func(3) calls func(2).
+func(2) calls func(1).
+func(1) calls func(0).
+func(0) executes return 5; and returns 5 to func(1).
+func(1) receives 5 and returns it to func(2).
+func(2) receives 5 and returns it to func(3).
+func(3) receives 5 and assigns it to result in main().
+
+
+Scenario 2: Return Without Value (e.g., return;)
+
+Agar return statement mein koi value nahi hoti (just return;), toh function ka activation record pop ho jata hai aur control directly calling function ke paas wapas chala jata hai.
+
+
+Function Call: Function ko call kiya gaya aur activation record stack mein push hota hai.
+Return Without Value: Jab return; hota hai:
+Function apni execution finish karta hai, uska activation record stack se pop hota hai.
+Control directly us function ke calling function ke paas wapas chala jata hai.
+
+
+Example Code:
+
+static void func(int n) {
+    if (n == 0)
+        return;  // Base case with no value
+    func(n - 1);
+}
+
+public static void main(String[] args) {
+    func(3);
+}
+
+
+Execution Flow:
+func(3) calls func(2).
+func(2) calls func(1).
+func(1) calls func(0).
+func(0) executes return; and its activation record is popped.
+Control goes back to func(1) which continues and pops its activation record.
+Control goes back to func(2), and finally, to func(3).
+Key Difference Between return 5; and return;
+
+
+return 5;
+Function returns a value.
+After the return value is passed, activation record is popped and control goes back to the calling function.
+The calling function receives the value and can use it.
+
+
+
+return;
+No value is returned.
+Function's activation record is popped, and control immediately goes to the calling function without passing any value.
+The calling function doesn't receive anything.
+
+
+
+Summary
+return 5;
+Return value is sent to the calling function, and then the activation record is popped.
+Control goes back to the calling function with the value.
+
+
+return;:
+No value is returned, and the function's activation record is popped.
+Control goes back to the calling function without sending any value.
