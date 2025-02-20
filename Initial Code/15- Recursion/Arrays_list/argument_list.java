@@ -9,17 +9,15 @@ public class argument_list {
             return list;
         }
 
-        if (arr[i] == target) {
+        if (arr[i] == target)
             list.add(i);
-            return search(arr, target, i + 1, list);
-        }
         return search(arr, target, i + 1, list);
     }
 
     public static void main(String[] args) {
         int[] arr = new int[] { 1, 2, 3, 4, 5, 4 };
         ArrayList<Integer> list = new ArrayList<>();
-        System.out.println(search(arr, 4, 0, list));
+        System.out.println((search(arr, 4, 0, list)));
     }
 
 }

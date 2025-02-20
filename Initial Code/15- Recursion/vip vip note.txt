@@ -1,0 +1,12 @@
+void return type:
+
+agr return type void hai tu control return chlny k bd jahan function call hua tha uski bd wali lines pr jaye ga
+aur jis function ki return type chli uska activation record khatam ho jaye ga saary ka sara
+
+
+
+any return type except void:
+
+function return hony pr us line pr jaye ga jahan function call hua tha 
+aur return statement jis function ki chli uska saary ka saary record bhi khatam ho jaye ga
+
